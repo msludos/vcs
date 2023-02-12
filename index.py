@@ -8,9 +8,8 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/aaa')
-def aaa():
-    return "getCToken()"
+@app.route('/api/vk', methods=['POST'])
+def vkapi():
     data = json.loads(request.data)
 
     if 'type' not in data.keys():
