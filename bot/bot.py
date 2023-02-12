@@ -5,7 +5,7 @@ def getCToken():
 def getToken():
     return os.environ.get("api_token")
 
-api = vk.API(access_token=getToken(), v='5.110')
+api = vk.API(access_token=getToken(), v='5.131')
 
 
 def send_message(peer_id, message, attachment=""):
