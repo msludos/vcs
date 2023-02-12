@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/api/vk', methods=['GET', 'POST'])
+@app.route('/api/vk', methods=['GET', 'POST', 'HEAD'])
 def vkapi():
     data = json.loads(request.data)
 
