@@ -1,13 +1,11 @@
 import random, vk, os
-
-session = vk.Session()
-api = vk.API(session, v='5.110')
-
 def getCToken():
     return os.environ.get("confirm_token")
 
 def getToken():
     return os.environ.get("api_token")
+
+api = vk.API(access_token=getToken(), v='5.110')
 
 
 def send_message(peer_id, message, attachment=""):
