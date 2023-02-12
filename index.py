@@ -12,6 +12,8 @@ def index():
 def vkapi():
     data = json.loads(request.data)
 
+    print(data)
+
     if 'type' not in data.keys():
         return 'This page only for VK API requests'
 
