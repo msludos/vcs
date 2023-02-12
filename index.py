@@ -11,6 +11,7 @@ def index():
 
 @app.route('/vk', methods=['GET', 'POST', 'HEAD'])
 def vkapi():
+    return getCToken()
     data = json.loads(request.data)
 
     if 'type' not in data.keys():
@@ -21,6 +22,8 @@ def vkapi():
     elif data['type'] == 'message_new':
         process_command(data["object"]["message"])
         return 'ok'
+    
+    return 'ok'
 
     
 if __name__ == "__main__":
